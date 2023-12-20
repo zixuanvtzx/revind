@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Admin Updates</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+	<h1>Admin Updates Page</h1>
+	<form action="{{ url_for('admin_update') }}" method="POST">
+		<p>Admin attending to case: <input type="text" name="admin_name"></p>
+		<p>Item Number: <input type="text" name="item_no"></p>
+		<p>Item Claimer: <input type="text" name="item_claimer"></p>
+		<p>Item Status:</p>
+		<div>
+			<input type="radio" id="claimed" name="status" value="C">
+			<label for="claimed">C (Claimed)</label>
+		</div>
+		<div>
+			<input type="radio" id="unclaimed" name="status" value="U">
+			<label for="unclaimed">U (Unclaimed)</label>
+		</div>
+		<p><input type="submit" value="Update"></p>
+	</form>
+</body>
+</html>

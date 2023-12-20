@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>User Request</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+	<h1>User Request to Claim Item Page</h1>
+	<div>
+		<h1>Claim Item</h1>
+			<form action="{{ url_for('user_request') }}" method="POST">
+				<p>Item number to claim: <input type="text" name="item_no"></p>
+				<p>Claimer's User ID: <input type="text" name="user_id"></p>
+				<p>Class: <input type="text" name="user_class"></p>
+				<p>Index No: <input type="text" name="user_ind"></p>
+				<p class="smallnote">Please input in DDMMYYYY format, eg 01012023</p>
+				<p>Meeting Date: <input type="text" name="meet_date"></p>
+				<p class="smallnote">Please input in 24-hour format</p>
+				<p>Meeting Time: <input type="text" name="meet_time"></p>
+				<p>Message: <input type="text" name="meet_msg"></p>
+				<p><input type="submit" value="Claim Item"></p>
+			</form>
+	</div>
+	
+	<p><a href="{{ url_for('user_welcome') }}">Back to User Welcome Page</a></p>
+</body>
+</html>

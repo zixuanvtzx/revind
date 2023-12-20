@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>User Report</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+	<h1>User Report Page</h1>
+	<form action="{{ url_for('user_report') }}" method="POST">
+		<p class="smallnote">Please input in DDMMYYYY format, eg 01012023</p>
+		<p>Date Found: <input type="text" name="item_date_f"></p>
+		<p class="smallnote">Please input in 24-hour format, eg 1330</p>
+		<p>Time Found: <input type="text" name="item_time_f"></p>
+		<p>Location Found: <input type="text" name="item_location"></p>
+		<p>UserID of person who found the item: <input type="text" name="item_founder"></p>
+		
+		<p>Item Category:</p>
+		<div>
+			<input type="radio" id="clothes" name="item_cat" value="Clothes">
+			<label for="clothes">Clothes</label>
+		</div>
+		<div>
+			<input type="radio" id="stationery" name="item_cat" value="Stationery">
+			<label for="stationery">Stationery</label>
+		</div>
+	<div>
+		<input type="radio" id="bottles" name="item_cat" value="Bottles">
+		<label for="bottles">Bottles</label>
+	</div>
+	<div>
+		<input type="radio" id="bnp" name="item_cat" value="Bags&Pouches">
+		<label for="bnp">Bags & Pouches</label>
+	</div>
+	<div>
+		<input type="radio" id="calculators" name="item_cat" value="Calculators">
+		<label for="calculators">Calculators</label>
+	</div>
+	<div>
+		<input type="radio" id="fnw" name="item_cat" value="Files&Worksheets">
+		<label for="fnw">Files & Worksheets</label>
+	</div>
+	<div>
+		<input type="radio" id="other" name="item_cat" value="Other">
+		<label for="other">Other</label>
+	</div>
+	
+		<p>Item Name: <input type="text" name="item_name"></p>
+		<p class="smallnote">Please upload a picture of the lost and found item on google drive and input the shareable link here</p>
+		<p>Item Image URL: <input type="text" name="item_image_url"></p>
+		<p><input type="submit" value="Report"></p>
+	</form>
+	
+</body>
+</html>

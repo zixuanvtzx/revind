@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Admin Welcome</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+	<h1>Admin Welcome Page</h1>
+	<p>Welcome to ReVind, {{ adminid }}!</p>
+	
+	<div>
+		<h2>List of Items Reported</h2>
+		<p>U = Unclaimed, C = Claimed</p>
+		<table border="1px">
+			<tr>
+				<th>Item Number</th>
+				<th>Date Found</th>
+				<th>Time Found</th>
+				<th>Location Found</th>
+				<th>Item Founder</th>
+				<th>Item Category</th>
+				<th>Item Name</th>
+				<th class="item_img_url">Item Image</th>
+				<th>Claimed Status</th>
+				<th>Item Claimer</th>
+				<th>Admin Attendee</th>
+			</tr>
+			{% for row in itemrecords %}
+			<tr>
+				<td>{{ row[0] }}</td>
+				<td>{{ row[1] }}</td>
+				<td>{{ row[2] }}</td>
+				<td>{{ row[3] }}</td>
+				<td>{{ row[4] }}</td>
+				<td>{{ row[5] }}</td>
+				<td>{{ row[6] }}</td>
+				<td>{{ row[7] }}</td>
+				<td>{{ row[8] }}</td>
+				<td>{{ row[9] }}</td>
+				<td>{{ row[10] }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+	
+	<div>
+		<h2>List of Requests</h2>
+		<table border="1px">
+			<tr>
+				<th>Item Number</th>
+				<th>User ID</th>
+				<th>User Class</th>
+				<th>User Index No</th>
+				<th>Meeting Date</th>
+				<th>Meeting Time</th>
+				<th>Meeting Message</th>
+				<th>Admin Attendee</th>
+			</tr>
+			{% for row in claimsrecords %}
+			<tr>
+				<td>{{ row[0] }}</td>
+				<td>{{ row[1] }}</td>
+				<td>{{ row[2] }}</td>
+				<td>{{ row[3] }}</td>
+				<td>{{ row[4] }}</td>
+				<td>{{ row[5] }}</td>
+				<td>{{ row[6] }}</td>
+				<td>{{ row[7] }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+	
+	<div>
+		<h1>Updating of Claims</h1>
+		<p><a href="{{ url_for('admin_update') }}">Click here to update</a></p>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Admin Sign In</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+	<h1>Admin Sign In Page</h1>
+	<form action="{{ url_for('admin_sign_in') }}" method="POST">
+		<p>Admin ID: <input type="text" name="admin_id"></p>
+		<p>Password: <input type="password" name="admin_pw"></p>
+		<p><input type="submit" value="Sign In"></p>
+	</form>
+</body>
+</html>
