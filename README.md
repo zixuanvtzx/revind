@@ -1,0 +1,1 @@
+Since website is accessible to anyone and everyone, why not make a site where all the misplaced items can be reported so that they can be reunited with their owners soon! Currently, my version does not allow the upload of photos, so that's something to work on!
